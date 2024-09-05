@@ -6,6 +6,8 @@ import logo from './assets/dgLogo.png';
 function App() {
   const dgLogo = logo;
   const filterExplanation = 'If no filters or all filters are selected, all categories are shown. To filter specific categories, choose one or more filters.'
+  const explanationTitle = 'Fun New Date Ideas';
+  const explanationBody = '125+ date ideas to try when you are unable to come up with anything new.';
   const [filteredIdeas, setFilteredIdeas] = useState(dateIdeas);
   const [selectedTypes, setSelectedTypes] = useState([]);
   const [lastIdeaIndex, setLastIdeaIndex] = useState(null);
@@ -40,7 +42,7 @@ function App() {
   };
 
   const createIdeaSearchURL = (idea) => {
-    let url = 'https:www.google.com/search?q=';
+    let url = 'https://www.google.com/search?q=';
     for (let i = 0; i < idea.length; i++){
       idea[i] == ' ' ? url += '+' : url += idea[i];
     }
@@ -122,8 +124,8 @@ function App() {
             </>
             :
             <div>
-              <h2>What is this</h2>
-              <p className='description'>Why did I create this</p>
+              <h2>{explanationTitle}</h2>
+              <p className='description'>{explanationBody}</p>
             </div>
             }
           </div>
